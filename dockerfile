@@ -1,7 +1,6 @@
-FROM tomcat:8.0-alpine
-LABEL maintainer="saikrishnaganta11@gmail.com"
-
-ADD /usr/local/tomcat/webapps/
-
+FROM tomcat:8.5.37-jre8
+MAINTAINER saikrishnaganta11@gmail.com
+RUN apt-get update
+COPY /usr/local/tomcat/webapps
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+CMD ["catalina.sh," "run"]
