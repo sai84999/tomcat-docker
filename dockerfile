@@ -1,9 +1,7 @@
-FROM tomcat:8.5.37-jre8
-MAINTAINER saikrishna@gmail.com
-RUN apt-get update -y
-WORKDIR /usr/local/tomcat
-COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+FROM tomcat:8.0-alpine
+LABEL maintainer="saikrishnaganta11@gmail.com"
+
+ADD /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
